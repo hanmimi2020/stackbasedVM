@@ -1,0 +1,23 @@
+push
+@main
+jump
+
+#subroutine_add1
+    add
+    __exit
+
+#main
+    push
+    51199
+    push
+    1
+
+    push
+    @subroutine_add1
+    subroutine_call
+    
+    push
+    200
+    save_to_memory
+
+halt

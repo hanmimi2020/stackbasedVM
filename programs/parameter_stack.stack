@@ -1,0 +1,32 @@
+﻿push
+@main
+jump
+
+
+#subroutine_add1
+    pop_parameter_stack
+    pop_parameter_stack
+
+    add
+// 结果放在 operand stack 上，相当于是返回值
+// 从 return stack 中 pop 出返回地址，加载到 pa
+    __exit
+
+#main
+    push
+    51199
+    push
+    1
+    
+    push_parameter_stack
+    push_parameter_stack
+
+    push
+    @subroutine_add1
+    subroutine_call
+
+    push
+    200
+    save_to_memory
+
+halt

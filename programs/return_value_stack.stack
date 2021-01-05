@@ -1,0 +1,35 @@
+﻿//单行注释
+push
+@main
+jump //inline注释
+
+
+#subroutine_add1
+    pop_parameter_stack
+    pop_parameter_stack
+
+    add
+    push_return_value_stack
+
+    __exit
+
+
+#main
+    push
+    51199
+    push
+    1
+    push_parameter_stack
+    push_parameter_stack
+
+    push
+    @subroutine_add1
+    subroutine_call
+
+    pop_return_value_stack
+    
+    push
+    200
+    save_to_memory
+
+halt

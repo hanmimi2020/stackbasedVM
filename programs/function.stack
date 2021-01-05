@@ -1,0 +1,22 @@
+push
+@main
+jump
+
+.function add1 a b
+    .var c 0
+    .add a b c
+    .return c
+.function_end
+
+
+#main
+    .var a 51199
+    .var b 1
+
+    .call add1 a b
+    pop_return_value_stack
+
+    push
+    200
+    save_to_memory
+    halt

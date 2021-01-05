@@ -1,0 +1,9 @@
+.var a 51199
+.var b 3
+.var c 0
+.add a b c
+.var_to_operand_stack c
+push
+200
+save_to_memory
+halt

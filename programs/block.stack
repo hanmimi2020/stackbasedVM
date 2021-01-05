@@ -1,0 +1,39 @@
+push
+@main
+jump
+
+.function draw_point_at_0_0
+    .var a 51200
+
+    push
+    @内部函数定义之后
+    jump
+
+    // 内部函数定义
+    .function draw_point_at_1_1
+        .var b 51211
+        // b 是 51211，所以在 (1, 1) 画点
+        .var_to_operand_stack b
+        push
+        200
+        save_to_memory
+
+        .return
+    .function_end
+
+    #内部函数定义之后
+    .call draw_point_at_1_1
+
+    // a 是 51200，所以在 (0, 0) 画点
+    .var_to_operand_stack a
+    push
+    200
+    save_to_memory
+
+    .return
+.function_end
+
+
+#main
+    .call draw_point_at_0_0
+    halt

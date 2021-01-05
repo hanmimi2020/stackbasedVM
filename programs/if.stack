@@ -1,0 +1,9 @@
+.var i 1
+.if i > 0
+    .var address 51200
+    .var color 200
+    .var_to_operand_stack address
+    .var_to_operand_stack color
+    save_to_memory
+.if_end
+halt
